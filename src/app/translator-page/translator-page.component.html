@@ -1,2 +1,45 @@
+<div class="translator-body">
+  <div class="options-body">
+    <div class="options">
+      <div *ngFor="let option of translateOptions">
+        <div (click)="changeOption(option.id)">
+          <input
+            class="option-radio"
+            type="radio"
+            name="option"
+            id="{{ option.id }}"
+          />
+          <label class="option-label" for="{{ option.id }}">{{
+            option.description
+          }}</label>
+        </div>
+      </div>
+    </div>
 
-<textarea name="translator-textarea" id="" cols="30" rows="10"></textarea>
+    <div class="options-funcs">
+      <button>Seçenek Ekle</button>
+    </div>
+  </div>
+  <div class="translator-area">
+    <textarea
+      placeholder="Metin girin..."
+      [(ngModel)]="textAreaValue"
+      name="translator-textarea"
+      id=""
+      spellcheck="false"
+    ></textarea>
+    <div style="width: 70px; padding: 5px">
+      <button (click)="translateFunc()">Çevir</button>
+    </div>
+  </div>
+
+  <div class="response-body">
+    <div class="content-area">
+      <div id="language-content">{{ translatedValue.to }}</div>
+      <div id="translate-content">{{ translatedValue.text }}</div>
+    </div>
+    <div class="content-functions">
+      <button>Kopya</button>
+    </div>
+  </div>
+</div>
