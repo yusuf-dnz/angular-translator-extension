@@ -23,6 +23,11 @@ textarea {
   background-color: rgba(0, 0, 0, 0.4);
   color: seashell;
 }
+textarea:focus {
+  border-color: #007bff; /* Özel bir odaklandığında renk */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Hafif bir gölge */
+  outline: none; /* Varsayılan odak çerçevesini kaldır */
+}
 .response-body {
   flex-direction: row;
 }

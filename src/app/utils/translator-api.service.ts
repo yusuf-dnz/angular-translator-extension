@@ -46,4 +46,21 @@ export class TranslatorApiService {
         });
     });
   }
+
+  getLanguages(): Observable<any>{
+    const config: AxiosRequestConfig={
+      baseURL: 'https://api.cognitive.microsofttranslator.com/languages?api-version=3.0',
+      headers: {'X-Custom-Header': 'foobar'}
+    }
+    return new Observable(observer=>{
+      axios(config)
+      .then(response => {
+        observer.next(response.data);
+        observer.complete();
+      })
+      .catch(error => {
+        observer.error(error);
+      });
+    })
+  }
 }
