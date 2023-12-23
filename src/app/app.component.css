@@ -1,0 +1,6 @@
+.app{
+  margin: auto;
+  background: linear-gradient(to right, #3f72ff, #e388ff);
+  width: 440px;
+  min-height: 200px;
+}

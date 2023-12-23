@@ -2,22 +2,23 @@
   <div class="options-body">
     <div class="options">
       <div *ngFor="let option of translateOptions">
-        <div (click)="changeOption(option.id)">
-          <input
-            class="option-radio"
-            type="radio"
-            name="option"
-            id="{{ option.id }}"
-          />
-          <label class="option-label" for="{{ option.id }}">{{
-            option.description
-          }}</label>
-        </div>
+        <input
+          class="option-radio"
+          type="radio"
+          name="option"
+          id="{{ option.id }}"
+        />
+        <label
+          (click)="selectOption(option.id)"
+          class="option-label"
+          for="{{ option.id }}"
+          >{{ option.description }}</label
+        >
       </div>
     </div>
 
     <div class="options-funcs">
-      <button>Seçenek Ekle</button>
+      <button (click)="goSettings()">Seçenek Ekle</button>
     </div>
   </div>
   <div class="translator-area">
@@ -43,4 +44,3 @@
     </div>
   </div>
 </div>
-<button >new</button>

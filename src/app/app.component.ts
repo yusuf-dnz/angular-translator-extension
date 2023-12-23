@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { TranslatorPageComponent } from './translator-page/translator-page.component';
 import { FormsModule } from '@angular/forms';
 import { TranslatorApiService } from './utils/translator-api.service';
@@ -23,16 +23,20 @@ import { SettingsPageComponent } from './settings-page/settings-page.component';
 export class AppComponent {
   title = 'angular-app';
 
-  constructor(private translatorService: TranslatorApiService) {}
+  constructor(
+    private translatorService: TranslatorApiService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.router.navigate(['translator-page'])
     if (!localStorage.getItem('languages')) {
-      console.log('languages');
+      console.log('languages eklendi');
       this.getLanguages();
     }
 
     if (!localStorage.getItem('translator-configs')) {
-      console.log('config');
+      console.log('config eklendi');
       const firstConfig = new TranslatorConfig('', 'en');
       localStorage.setItem('translator-configs', JSON.stringify([firstConfig]));
     }
@@ -47,7 +51,7 @@ export class AppComponent {
       (error) => {
         console.log(error);
       },
-      () => {}
+      () => { }
     );
   }
 }

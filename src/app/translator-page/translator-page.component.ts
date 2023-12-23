@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TranslatorConfig } from '../class/translator-config.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-translator-page',
@@ -16,16 +17,19 @@ export class TranslatorPageComponent {
   translatedDataObject: Array<any> = [];
   translatedValue = { text: '', to: '' };
   textAreaValue: string = '';
-  translateOptions: Array<any> = JSON.parse(localStorage.getItem('translator-configs')||'');
+  translateOptions: Array<any> = JSON.parse(
+    localStorage.getItem('translator-configs') || ''
+  );
   option: number = 0;
+  selectedOption: string = '';
 
-  constructor(private translatorService: TranslatorApiService) {}
 
-  ngOnInit() { 
-    // console.log(JSON.parse(localStorage.getItem('languages')||''))
-    // const my = new TranslatorConfig('tr','en');
-    // console.log(my);
-    }
+  constructor(
+    private translatorService: TranslatorApiService,
+    private router: Router
+  ) { }
+
+  ngOnInit() { }
 
   translate() {
     this.translatorService
@@ -46,7 +50,6 @@ export class TranslatorPageComponent {
             this.translatedDataObject[0].translations[0].text;
           this.translatedValue.to =
             this.translatedDataObject[0].translations[0].to;
-          // console.log(this.translatedValue.text, this.translatedValue.to);
         }
       );
   }
@@ -54,15 +57,20 @@ export class TranslatorPageComponent {
   translateFunc() {
     this.translate();
   }
-  changeOption(option: number) {
-    // İki kez çalışıyor
-    this.option = option;
-    console.log(this.option);
+  selectOption(option: string) {
+    const x = this.translateOptions.findIndex(function (obj) {
+      return obj.id === option;
+    });
+    this.option = x;
   }
 
+  goSettings() {
+    this.router.navigate(['settings-page']);
+  }
   // @HostListener('document:keydown.enter', ['$event'])
   // onEnterKey(event: KeyboardEvent): void {
   //   // event.preventDefault(); // Sayfanın yeniden yüklenmesini engelle
   //   this.translateFunc();   // Buton fonksiyonunu çağır
   // }
+
 }

@@ -1,1 +1,44 @@
-<p>settings-page works!</p>
+<div class="options-body">
+  <div class="options" *ngFor="let option of translateOptions">
+      <input
+        class="option-radio"
+        type="radio"
+        name="option"
+        id="{{ option.id }}"
+      />
+      <label
+        (click)="selectOption(option.id)"
+        class="option-label"
+        for="{{ option.id }}"
+        >{{ option.description }}</label
+      >
+    
+  </div>
+</div>
+<div class="button">
+  <button (click)="deleteOption()">Seçenek Sil</button>
+</div>
+
+<div class="select-body">
+  <div class="custom-select">
+    <select [(ngModel)]="from">
+      <option value="">Auto</option>
+      <option *ngFor="let item of languages" class="option" value="{{ item }}">
+        {{ languagesData[item].name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="custom-select">
+    <select [(ngModel)]="to">
+      <option value="">...</option>
+      <option *ngFor="let item of languages" class="option" value="{{ item }}">
+        {{ languagesData[item].name }}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="button">
+  <button (click)="addOption()">Ekle</button>
+</div>

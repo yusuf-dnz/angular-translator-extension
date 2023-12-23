@@ -1,0 +1,73 @@
+.select-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.custom-select {
+  margin: 10px;
+  position: relative;
+  font-family: Arial;
+  background-color: transparent;
+  border-width: 0px;
+}
+select:hover {
+    padding: 10px;
+  }
+.option {
+  background-color: rgb(20, 129, 172);
+  padding: 5px;
+}
+select {
+  color: aliceblue;
+  background-color: rgb(20, 129, 172);
+  border-width: 0px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.option-radio {
+  display: none;
+}
+.option-radio:checked + label {
+  background-color: #6b0005;
+  color: #fff;
+  border-color: #fa0303;
+}
+.option-label {
+  margin: 5px;
+  font-size: 12px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff77;
+  transition: background-color 0.3s ease;
+}
+.options {
+  
+}
+.options-funcs {
+  width: 70px;
+  padding: 5px;
+}
+.options-body {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  padding: 20px;
+}
+.button {
+  text-align: center;
+}
+button {
+  color: #ddd;
+  background-color: rgb(20, 129, 172);
+  border-width: 0px;
+  border-radius: 5px;
+  padding: 10px;
+}
+button:hover {
+    color: #ddd;
+    background-color: rgb(20, 129, 172);
+    padding: 12px;
+  }
+ 

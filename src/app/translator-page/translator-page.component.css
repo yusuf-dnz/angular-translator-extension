@@ -1,14 +1,12 @@
 * {
   display: flex;
   flex-direction: column;
-
 }
 .translator-body {
-  background: linear-gradient(to right, #3f72ff, #e388ff);
+  /* background: linear-gradient(to right, #3f72ff, #e388ff); */
   width: 400px;
   padding: 20px;
   min-height: 150px;
-
 }
 
 .translator-area {
@@ -59,17 +57,17 @@ textarea:focus {
   border-color: #e388ff;
 }
 .option-label {
-    padding: 5px;
   font-size: 12px;
   border: 2px solid #ddd;
   border-radius: 5px;
   background-color: #ffffff77;
   transition: background-color 0.3s ease;
   margin: 5px;
-  max-width: 100px;
 }
 .options {
   flex-direction: row;
+  flex-wrap: wrap;
+
   width: 320px;
 }
 .options-funcs {
@@ -77,6 +75,6 @@ textarea:focus {
   padding: 5px;
 }
 .options-body {
-  flex-direction: row;
+ flex-direction: row;
   width: 400px;
 }
