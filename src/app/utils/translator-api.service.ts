@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import axios, {AxiosRequestConfig} from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
