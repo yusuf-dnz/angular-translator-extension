@@ -1,44 +1,71 @@
-<div class="options-body">
-  <div class="options" *ngFor="let option of translateOptions">
-      <input
-        class="option-radio"
-        type="radio"
-        name="option"
-        id="{{ option.id }}"
-      />
-      <label
-        (click)="selectOption(option.id)"
-        class="option-label"
-        for="{{ option.id }}"
-        >{{ option.description }}</label
-      >
-    
+<div class="settings-body">
+  <div class="route">
+    <img
+      (click)="goTranslator()"
+      class="icon"
+      title="Go Translator"
+      src="../../assets/icons8-back-48.png"
+      alt=""
+    />
   </div>
-</div>
-<div class="button">
-  <button (click)="deleteOption()">Seçenek Sil</button>
-</div>
+  <div class="options-body">
+    <div class="options">
+      <div *ngFor="let option of translateOptions">
+        <input
+          class="option-radio"
+          type="radio"
+          name="option"
+          id="{{ option.id }}"
+        />
+        <label
+          (click)="selectOption(option.id)"
+          class="option-label"
+          for="{{ option.id }}"
+          >{{ option.description }}</label
+        >
+      </div>
+    </div>
 
-<div class="select-body">
-  <div class="custom-select">
-    <select [(ngModel)]="from">
-      <option value="">Auto</option>
-      <option *ngFor="let item of languages" class="option" value="{{ item }}">
-        {{ languagesData[item].name }}
-      </option>
-    </select>
+    <div class="options-funcs">
+      <div class="button" (click)="deleteOption()">
+        <img
+          title="Delete option"
+          src="../../assets/icons8-trash-48.png"
+          alt=""
+        />
+      </div>
+    </div>
   </div>
+  <div class="select-body">
+    <div class="custom-select">
+      <select [(ngModel)]="from">
+        <option value="">Auto</option>
+        <option
+          *ngFor="let item of languages"
+          class="option"
+          value="{{ item }}"
+        >
+          {{ languagesData[item].nativeName }}
+        </option>
+      </select>
+    </div>
 
-  <div class="custom-select">
-    <select [(ngModel)]="to">
-      <option value="">...</option>
-      <option *ngFor="let item of languages" class="option" value="{{ item }}">
-        {{ languagesData[item].name }}
-      </option>
-    </select>
+    <div class="custom-select">
+      <select [(ngModel)]="to">
+        <option value="">...</option>
+        <option
+          *ngFor="let item of languages"
+          class="option"
+          value="{{ item }}"
+        >
+          {{ languagesData[item].nativeName }}
+        </option>
+      </select>
+    </div>
+    <div class="add-button">
+      <div class="button" (click)="addOption()">
+        <img title="Add" src="../../assets/icons8-plus-48.png" alt="" />
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="button">
-  <button (click)="addOption()">Ekle</button>
 </div>

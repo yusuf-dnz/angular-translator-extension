@@ -67,10 +67,18 @@ export class TranslatorPageComponent {
   goSettings() {
     this.router.navigate(['settings-page']);
   }
-  // @HostListener('document:keydown.enter', ['$event'])
-  // onEnterKey(event: KeyboardEvent): void {
-  //   // event.preventDefault(); // Sayfanın yeniden yüklenmesini engelle
-  //   this.translateFunc();   // Buton fonksiyonunu çağır
-  // }
+  copyToClipboard() {
+    navigator.clipboard.writeText(this.translatedValue.text)
+      .then(function () {
+      })
+      .catch(function (err) {
+        console.error("Clipboard error! ", err);
+      });
+  }
+  @HostListener('document:keydown.enter', ['$event'])
+  onEnterKey(event: KeyboardEvent): void {
+    event.preventDefault();
+    this.translateFunc();
+  }
 
 }

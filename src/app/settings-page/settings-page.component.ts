@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslatorConfig } from '../class/translator-config.model';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings-page',
@@ -20,7 +21,7 @@ export class SettingsPageComponent {
   to: string = '';
   selectedOption: string = '';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 
@@ -55,4 +56,11 @@ export class SettingsPageComponent {
   selectOption(option: string) {
     this.selectedOption = option;
   }
+
+  goTranslator() {
+    this.router.navigate(['translator-page']);
+  }
+
+
+  
 }

@@ -19,13 +19,13 @@
 
     <div class="options-funcs">
       <div class="button" (click)="goSettings()">
-        <img title="Settings" src="../../assets/icons8-setting-48.png" alt="">
+        <img title="Settings" src="../../assets/icons8-setting-48.png" alt="" />
       </div>
     </div>
   </div>
   <div class="translator-area">
     <textarea
-      placeholder="Metin girin..."
+      placeholder="..."
       [(ngModel)]="textAreaValue"
       name="translator-textarea"
       id=""
@@ -33,20 +33,23 @@
     ></textarea>
     <div style="width: 70px; padding: 5px">
       <div class="button" (click)="translateFunc()">
-        <img title="Translate" src="../../assets/icons8-convert-48.png" alt="">
+        <img
+          title="Translate"
+          src="../../assets/icons8-convert-48.png"
+          alt=""
+        />
       </div>
-
     </div>
   </div>
 
   <div class="response-body">
     <div class="content-area">
-      <div id="language-content">{{ translatedValue.to }}</div>
+      <div id="language-content"> -> {{ translatedValue.to }}</div>
       <div id="translate-content">{{ translatedValue.text }}</div>
     </div>
     <div class="content-functions">
-      <div class="button" (click)="goSettings()">
-      <img title="Copy" src="../../assets/icons8-copy-48.png" alt="">
+      <div class="button" (click)="copyToClipboard()">
+        <img title="Copy" src="../../assets/icons8-copy-48.png" alt="" />
       </div>
     </div>
   </div>

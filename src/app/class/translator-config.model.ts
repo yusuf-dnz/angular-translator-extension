@@ -13,7 +13,7 @@ export class TranslatorConfig {
 
   private static createDescription(a: string, b: string): string {
     const x = JSON.parse(localStorage.getItem('languages') || '');
-    const y = `${x[a]?.name ?? 'Auto'} -> ${x[b].name}`;
+    const y = `${x[a]?.nativeName ?? 'Auto'} -> ${x[b].nativeName}`;
     return y;
   }
 }

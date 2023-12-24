@@ -29,7 +29,7 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    this.router.navigate(['settings-page'])
+    this.router.navigate(['translator-page'])
     if (!localStorage.getItem('languages')) {
       console.log('languages eklendi');
       this.getLanguages();
