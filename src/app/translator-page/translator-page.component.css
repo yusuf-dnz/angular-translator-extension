@@ -78,3 +78,8 @@ textarea:focus {
  flex-direction: row;
   width: 400px;
 }
+button{
+  background-color: #007bff;
+  border-color: #5d0379;
+  border-width: 5px;
+}
