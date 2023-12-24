@@ -20,6 +20,8 @@ textarea {
   resize: vertical;
   background-color: rgba(0, 0, 0, 0.4);
   color: seashell;
+  cursor: text;
+  caret-color: seashell;
 }
 textarea:focus {
   border-color: #007bff; /* Özel bir odaklandığında renk */
@@ -38,6 +40,7 @@ textarea:focus {
 .content-area {
   background-color: rgba(0, 0, 0, 0.4);
   width: 300px;
+  min-height: 50px;
   padding: 10px;
 }
 .content-functions {
@@ -52,9 +55,9 @@ textarea:focus {
   display: none;
 }
 .option-radio:checked + label {
-  background-color: #5d0379;
+  background-color: #007bff;
   color: #fff;
-  border-color: #e388ff;
+  border-color: #00b7ff;
 }
 .option-label {
   font-size: 12px;
@@ -62,24 +65,32 @@ textarea:focus {
   border-radius: 5px;
   background-color: #ffffff77;
   transition: background-color 0.3s ease;
-  margin: 5px;
+  margin: 2px;
+  padding: 4px;
 }
 .options {
   flex-direction: row;
   flex-wrap: wrap;
-
   width: 320px;
 }
 .options-funcs {
+  justify-content: center;
   width: 70px;
   padding: 5px;
 }
 .options-body {
- flex-direction: row;
+  flex-direction: row;
   width: 400px;
+  min-height: 60px;
 }
-button{
+.button {
+  width: 30px;
   background-color: #007bff;
-  border-color: #5d0379;
-  border-width: 5px;
+  border-width: 0px;
+  border-radius: 10px;
+  padding: 3px;
+}
+.button:hover {
+  width: 35px;
+
 }

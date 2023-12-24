@@ -12,8 +12,8 @@
   border-width: 0px;
 }
 select:hover {
-    padding: 10px;
-  }
+  padding: 10px;
+}
 .option {
   background-color: rgb(20, 129, 172);
   padding: 5px;
@@ -35,15 +35,13 @@ select {
   border-color: #fa0303;
 }
 .option-label {
-  margin: 5px;
   font-size: 12px;
-  border: 2px solid #ddd;
   border-radius: 5px;
+  border: 2px solid #ddd;
   background-color: #ffffff77;
   transition: background-color 0.3s ease;
 }
 .options {
-  
 }
 .options-funcs {
   width: 70px;
@@ -66,8 +64,7 @@ button {
   padding: 10px;
 }
 button:hover {
-    color: #ddd;
-    background-color: rgb(20, 129, 172);
-    padding: 12px;
-  }
- 
+  color: #ddd;
+  background-color: rgb(20, 129, 172);
+  padding: 12px;
+}

@@ -18,7 +18,9 @@
     </div>
 
     <div class="options-funcs">
-      <button (click)="goSettings()">Seçenek Ekle</button>
+      <div class="button" (click)="goSettings()">
+        <img title="Settings" src="../../assets/icons8-setting-48.png" alt="">
+      </div>
     </div>
   </div>
   <div class="translator-area">
@@ -30,7 +32,10 @@
       spellcheck="false"
     ></textarea>
     <div style="width: 70px; padding: 5px">
-      <button type="submit" (click)="translateFunc()">Çevir</button>
+      <div class="button" (click)="translateFunc()">
+        <img title="Translate" src="../../assets/icons8-convert-48.png" alt="">
+      </div>
+
     </div>
   </div>
 
@@ -40,7 +45,9 @@
       <div id="translate-content">{{ translatedValue.text }}</div>
     </div>
     <div class="content-functions">
-      <button>Kopya</button>
+      <div class="button" (click)="goSettings()">
+      <img title="Copy" src="../../assets/icons8-copy-48.png" alt="">
+      </div>
     </div>
   </div>
 </div>
