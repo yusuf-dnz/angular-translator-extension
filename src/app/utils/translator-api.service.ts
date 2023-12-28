@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import axios, {AxiosRequestConfig} from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environments.prod';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TranslatorApiService {
-  key = environment.translatorApiKey;
-  endpoint = environment.translatorApiURL;
-  location = environment.translatorApiLocation;
+  private key = environment.translatorApiKey;
+  private endpoint = environment.translatorApiURL;
+  private location = environment.translatorApiLocation;
 
   translator(text:string, from:string, to:string): Observable<any>{
     const config: AxiosRequestConfig  = {
